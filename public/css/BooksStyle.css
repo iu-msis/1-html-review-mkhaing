@@ -1,0 +1,82 @@
+/*CSS file for Books Page*/
+
+	/*Formatting header*/
+    h1  {
+            color: white;
+            text-align:center;
+            background-color: lightblue;
+            padding: 30px;
+            margin-bottom: 0;
+        }
+
+	/*Formatting navigation bar*/	
+    .nav{
+          background-color:lightgrey;
+          overflow: hidden;
+		  padding:14px 16px;
+        }
+		
+    /*Formatting linked element in navigation bar*/
+    .nav a {
+                color: white;
+                text-align: center;
+                padding: 12px 14px;
+                font-size: 17px;
+            }
+			
+	/*Formatting navigation bar elements to change color on hover*/		
+	.nav a:hover{
+					color:blue;
+				}		
+
+	/*Formatting image*/			
+    img {
+              border: 2px solid #C0C0C0;
+              padding: 5px;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              width: 40%;
+            }
+			
+	/*Formatting image on hover*/
+    img:hover {
+        box-shadow: 5px 4px 10px black;
+      }
+
+    /*Formatting header*/
+	h4 {
+          padding-top: 20px;
+          padding-bottom: 15px;
+          text-align: center;
+      }
+
+	/*Formatting p element*/
+      p {
+            color: black;
+            font-size: 15px;
+            text-align: center;
+            color: black;
+            font-family: sans-serif;
+            text-align: center;
+            line-height: 2;
+        }
+		
+	/*Formatting table*/
+     table, th, td {
+          border: 1px solid black;
+          padding: 5px;
+          margin-left: auto;
+		  margin-right:auto;
+          }
+	
+	/*Formatting form*/	
+	  form{
+			text-align:center;
+			
+	  }
+	  
+	  
+			
+			
+			
