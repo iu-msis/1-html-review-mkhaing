@@ -28,55 +28,59 @@
     <h4> My Library</h4>
 
 	<!--Creating a table for book list-->
-	<table>
-	  <tr>
-		<th>Title</th>
-		<th>Author</th>
-		<th>Year Published</th>
-		<th>Publisher</th>
-		<th>Page Count</th>
-		<th>MSRP</th>
-	  </tr>
-	  <tr>
-		<td>The Great Gatsby</td>
-		<td>F Scott Fitzgerald</td>
-		<td>2021</td>
-		<td>Pandora's Box </td>
-		<td> 240</td>
-		<td>$20.00 </td>
-	  </tr>
-	  <tr>
-		<td>The Color Purple</td>
-		<td>Alice Walker</td>
-		<td>2019</td>
-		<td>Penguin Publishing Group </td>
-		<td>294</td>
-		<td>$30.00 </td>
-	  </tr>
-	  <tr>
-		<td>1984 </td>
-		<td>George Orwell </td>
-		<td>1950 </td>
-		<td>Penguin Publishing Group </td>
-		<td>328</td>
-		<td>$19.49 </td>
-	  </tr>
-	  <tr>
-		<td>Lord of the rings </td>
-		<td>J.R.R Tolkien </td>
-		<td>2012 </td>
-		<td>HMH Books</td>
-		<td>1504</td>
-		<td>$48.99 </td>
-	  </tr>
-	  <tr>
-		<td>Wuthering Heights</td>
-		<td>Emily Bronte</td>
-		<td>2017 </td>
-		<td>Pan Macmillan</td>
-		<td>272</td>
-		<td>$21.49 </td>
-	  </tr>
+	<table id="bookTable" class= table table-striped>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Year Published</th>
+				<th>Publisher</th>
+				<th>Page Count</th>
+				<th>MSRP</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>The Great Gatsby</td>
+				<td>F Scott Fitzgerald</td>
+				<td>2021</td>
+				<td>Pandora's Box </td>
+				<td> 240</td>
+				<td>$20.00 </td>
+			</tr>
+			<tr>
+				<td>The Color Purple</td>
+				<td>Alice Walker</td>
+				<td>2019</td>
+				<td>Penguin Publishing Group </td>
+				<td>294</td>
+				<td>$30.00 </td>
+			</tr>
+			<tr>
+				<td>1984 </td>
+				<td>George Orwell </td>
+				<td>1950 </td>
+				<td>Penguin Publishing Group </td>
+				<td>328</td>
+				<td>$19.49 </td>
+			</tr>
+			<tr>
+				<td>Lord of the rings </td>
+				<td>J.R.R Tolkien </td>
+				<td>2012 </td>
+				<td>HMH Books</td>
+				<td>1504</td>
+				<td>$48.99 </td>
+			</tr>
+			<tr>
+				<td>Wuthering Heights</td>
+				<td>Emily Bronte</td>
+				<td>2017 </td>
+				<td>Pan Macmillan</td>
+				<td>272</td>
+				<td>$21.49 </td>
+			</tr>
+	</tbody>	
 	</table>
 	
 	<br>
@@ -109,6 +113,11 @@
 	  </a>
 	</form>
 
+	<!--Linking js scripts for table from http://tristen.ca/tablesort/demo/-->
+	<script src="js/tablesort.min.js"></script>
+	<script>
+		new Tablesort(document.getElementById('bookTable'));
+	</script>
 
 	<!-- These links were referenced from getbootstrap.com resource given in assignment instructions -->
     <!-- jQuery and Bootstrap Bundle (includes Popper) -->
