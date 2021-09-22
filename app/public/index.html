@@ -48,15 +48,14 @@
     <p>Country: {{person.location.country}}</p>
     <p>Birthdate: {{birthdate}}</p>
     <p>Age: {{person.dob.age}}</p>
+
+  <!--Inserting button to refresh data-->
+    <form v-on:submit.prevent="fetchUserData">
+      <button type="submit">Refresh</button>
+    </form>
   </div>
 
 
-
-  <!--Code to refresh just data without reloading page
-  <form v-on:submit.prevent="fetchUserData">
-    <button type="submit">Refresh</button>
-  </form>
--->
 
 	<!-- These links were referenced from getbootstrap.com resource given in assignment instructions -->
     <!-- jQuery and Bootstrap Bundle (includes Popper) -->
@@ -65,7 +64,7 @@
     
     <!--day.js script from https://day.js.org/docs/en/installation/browser -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-    <script src ="js/index.js"></script>
+    <script src="js/index.js"></script>
 
   </body>
 </html>

@@ -21,26 +21,27 @@ const Users = {
         }
     },
 
-/*formatting date exercise from class
     methods:{
         fetchUserData(){
+                //Method 1:
+                fetch('https://randomuser.me/api/')
+                .then(response => response.json())
+                .then((parsedJson) => {
+                    console.log(parsedJson);
+                    this.person = parsedJson.results[0];
+        
+                })
+                .catch(err=>{
+                    console.error(err);
+                });
 
         }
     },
-*/
+
 
     created() {
-        //Method 1:
-        fetch('https://randomuser.me/api/')
-        .then(response => response.json())
-        .then((parsedJson) => {
-            console.log(parsedJson);
-            this.person = parsedJson.results[0]
-
-        })
-        .catch(err=>{
-            console.error(err)
-        })
+        this.fetchUserData();
+    }
 
         /*
             .then(response => response.json())
@@ -59,5 +60,4 @@ const Users = {
         
     }
 
-}
 Vue.createApp(Users).mount('#userApp')
