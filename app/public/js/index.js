@@ -1,63 +1,49 @@
-const Users = {
-    data() {
-        return {
-        "person":{},   
-        "results": {
-           "name":'kkkk',
-            "email":'kkkk@yahoo.com',
-            "country":'Canada',
-            "birthdate":'May 6',
-            "age":'39',
-            "userImg":'',
-            "userImgThumbnail":''
-        },
+const SomeApp = {
+  data() {
+    return {
+      books: [],
+      bookForm:{}
     }
-},
+  },
+  computed: {},
+  methods: {
+      fetchBookData() {
+          fetch('/api/book/')
+          .then( response => response.json() )
+          .then( (responseJson) => {
+              console.log(responseJson);
+              this.books = responseJson;
+          })
+          .catch( (err) => {
+              console.error(err);
+          })
+      },
+      
+      postBook(evt) {        
+        console.log("Posting!", this.bookForm);
 
+        fetch('api/book/create.php', {
+            method:'POST',
+            body: JSON.stringify(this.bookForm),
+            headers: {
+              "Content-Type": "application/json; charset=utf-8"
+            }
+          })
+          .then( response => response.json() )
+          .then( json => {
+            console.log("Returned from post:", json);
+            // TODO: test a result was returned!
+            this.books = json;
+            
+            // reset the form
+            this.bookForm = {};
+          });
+      }
+      },
+  created() {
+      this.fetchBookData();
+  }
 
-    computed:{
-        birthdate(){
-            return dayjs(this.person.dob.date).format('D MMM YYYY')
-        }
-    },
+}
 
-    methods:{
-        fetchUserData(){
-                //Method 1:
-                fetch('https://randomuser.me/api/')
-                .then(response => response.json())
-                .then((parsedJson) => {
-                    console.log(parsedJson);
-                    this.person = parsedJson.results[0];
-        
-                })
-                .catch(err=>{
-                    console.error(err);
-                });
-
-        }
-    },
-
-
-    created() {
-        this.fetchUserData();
-    }
-
-        /*
-            .then(response => response.json())
-        Is the same as
-            .then(function(response) {return response.json()})
-        */
-
-
-        //Method 2:
-        // const response = await fetch("https://randomuser.me/api/");
-        // const responseJson = await response.json();
-
-        // console.log("Two:", responseJson);
-        // this.message = responseJson.results[0].name;
-        // this.result = responseJson.results[0];
-        
-    }
-
-Vue.createApp(Users).mount('#userApp')
+Vue.createApp(SomeApp).mount('#bookApp');
